@@ -1,22 +1,32 @@
-/* iOS 26 Liquid Glass Design Language */
+/* iOS 26 Liquid Glass Design Language - Modern Tech Palette */
 :root {
-  /* Liquid Glass Color Palette */
-  --glass-primary: rgba(255, 255, 255, 0.1);
-  --glass-secondary: rgba(255, 255, 255, 0.05);
-  --glass-accent: rgba(0, 122, 255, 0.3);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --glass-shadow: rgba(0, 0, 0, 0.1);
-  
-  /* Dynamic Tints */
-  --tint-blue: rgba(0, 122, 255, 0.8);
-  --tint-purple: rgba(175, 82, 222, 0.8);
-  --tint-green: rgba(52, 199, 89, 0.8);
-  --tint-orange: rgba(255, 149, 0, 0.8);
-  
-  /* Typography */
-  --text-primary: rgba(255, 255, 255, 0.95);
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --text-tertiary: rgba(255, 255, 255, 0.5);
+    /* Modern Tech Professional Color Palette */
+    --primary-blue: #2563EB;        /* Deep Blue Primary */
+    --neutral-dark: #111827;        /* Charcoal Black */
+    --neutral-light: #F9FAFB;       /* Soft White */
+    --accent-orange: #F97316;       /* Vibrant Orange */
+    
+    /* Glass Effects with Modern Tech Colors */
+    --glass-primary: rgba(249, 250, 251, 0.12);
+    --glass-secondary: rgba(249, 250, 251, 0.08);
+    --glass-accent: rgba(37, 99, 235, 0.3);
+    --glass-border: rgba(249, 250, 251, 0.25);
+    --glass-shadow: rgba(17, 24, 39, 0.15);
+    
+    /* Modern Tech Dynamic Tints */
+    --tint-blue: rgba(37, 99, 235, 0.9);
+    --tint-deep-blue: rgba(37, 99, 235, 0.95);
+    --tint-orange: rgba(249, 115, 22, 0.9);
+    --tint-charcoal: rgba(17, 24, 39, 0.9);
+    --tint-gray: rgba(107, 114, 128, 0.8);
+    --tint-light-gray: rgba(229, 231, 235, 0.8);
+    
+    /* Modern Tech Typography */
+    --text-primary: rgba(249, 250, 251, 0.95);
+    --text-secondary: rgba(249, 250, 251, 0.8);
+    --text-tertiary: rgba(249, 250, 251, 0.6);
+    --text-dark: rgba(17, 24, 39, 0.95);
+    --text-dark-secondary: rgba(17, 24, 39, 0.8);
   
   /* Spacing */
   --spacing-xs: 8px;
@@ -54,11 +64,10 @@
 body {
   font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: linear-gradient(135deg, 
-    #667eea 0%, 
-    #764ba2 25%, 
-    #f093fb 50%, 
-    #f5576c 75%, 
-    #4facfe 100%);
+    rgba(37, 99, 235, 0.95) 0%, 
+    rgba(17, 24, 39, 0.9) 30%,
+    rgba(37, 99, 235, 0.85) 70%, 
+    rgba(17, 24, 39, 0.95) 100%);
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
   min-height: 100vh;
@@ -143,14 +152,14 @@ body {
 .avatar-placeholder {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--tint-blue), var(--tint-purple));
+  background: linear-gradient(135deg, var(--tint-blue), var(--tint-deep-blue));
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2.5rem;
   font-weight: 600;
-  color: white;
+  color: var(--text-primary);
   box-shadow: 
     0 8px 32px rgba(0, 122, 255, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
@@ -166,11 +175,12 @@ body {
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: var(--spacing-sm);
-  background: linear-gradient(135deg, var(--tint-blue), var(--tint-purple));
+  background: linear-gradient(135deg, var(--text-primary), rgba(255, 255, 255, 0.7));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: titleShimmer 2s ease-in-out infinite alternate;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes titleShimmer {
@@ -258,9 +268,11 @@ body {
 
 .glass-button:hover {
   transform: translateY(-2px);
-  background: var(--glass-accent);
-  border-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 8px 25px rgba(0, 122, 255, 0.3);
+  background: rgba(249, 115, 22, 0.15);
+  border-color: rgba(249, 115, 22, 0.4);
+  box-shadow: 
+    0 8px 32px rgba(249, 115, 22, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 /* Section Headers */
@@ -273,10 +285,8 @@ body {
 .section-header h2 {
   font-size: 2.5rem;
   font-weight: 600;
-  background: linear-gradient(135deg, var(--tint-green), var(--tint-blue));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Skills Section */
@@ -309,8 +319,8 @@ body {
 
 .skill-tag {
   padding: var(--spacing-xs) var(--spacing-sm);
-  background: linear-gradient(135deg, var(--tint-blue), var(--tint-purple));
-  color: white;
+  background: linear-gradient(135deg, var(--tint-blue), var(--tint-orange));
+  color: var(--text-primary);
   border-radius: var(--radius-sm);
   font-size: 0.9rem;
   font-weight: 500;
@@ -318,9 +328,16 @@ body {
   transition: all 0.3s ease;
 }
 
+.skill-tag:nth-child(6n+1) { background: var(--tint-blue); }
+.skill-tag:nth-child(6n+2) { background: var(--tint-deep-blue); }
+.skill-tag:nth-child(6n+3) { background: var(--tint-orange); }
+.skill-tag:nth-child(6n+4) { background: var(--tint-charcoal); }
+.skill-tag:nth-child(6n+5) { background: var(--tint-gray); }
+.skill-tag:nth-child(6n+6) { background: var(--tint-light-gray); }
+
 .skill-tag:hover {
   transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
 }
 
 /* Experience Section */
@@ -353,9 +370,10 @@ body {
 .company {
   display: block;
   font-size: 1.1rem;
-  color: var(--tint-blue);
-  font-weight: 500;
+  color: var(--tint-orange);
+  font-weight: 600;
   margin-bottom: var(--spacing-xs);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .duration {
@@ -469,15 +487,61 @@ body {
   padding: var(--spacing-lg);
 }
 
+.interests-card {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 12px 40px rgba(37, 99, 235, 0.15),
+    0 4px 20px rgba(249, 115, 22, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.interests-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    rgba(37, 99, 235, 0.6) 0%, 
+    rgba(249, 115, 22, 0.6) 50%, 
+    rgba(37, 99, 235, 0.6) 100%);
+  opacity: 0.8;
+}
+
+.interests-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    transparent 100%);
+  transition: left 0.6s ease;
+}
+
+.interests-card:hover::after {
+  left: 100%;
+}
+
 .education-card h2,
 .interests-card h2 {
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: var(--spacing-md);
-  background: linear-gradient(135deg, var(--tint-purple), var(--tint-orange));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .education-card h3 {
@@ -506,17 +570,17 @@ body {
 
 .interest-tag {
   padding: var(--spacing-sm) var(--spacing-md);
-  background: linear-gradient(135deg, var(--tint-green), var(--tint-blue));
-  color: white;
+  background: linear-gradient(135deg, #2563EB, #1E40AF, #F97316);
+  color: var(--text-primary);
   border-radius: var(--radius-md);
   font-weight: 500;
-  box-shadow: 0 4px 15px rgba(52, 199, 89, 0.3);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
   transition: all 0.3s ease;
 }
 
 .interest-tag:hover {
   transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 6px 20px rgba(52, 199, 89, 0.4);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
 }
 
 /* Responsive Design */
@@ -596,12 +660,12 @@ body {
 /* Print Styles */
 @media print {
   body {
-    background: white;
-    color: black;
+    background: var(--text-primary);
+        color: var(--primary-bg);
   }
   
   .glass-surface {
-    background: white;
+    background: var(--text-primary);
     border: 1px solid #ccc;
     box-shadow: none;
     backdrop-filter: none;
@@ -609,7 +673,7 @@ body {
   
   .hero-title,
   .section-header h2 {
-    color: black;
-    -webkit-text-fill-color: black;
+    color: var(--primary-bg);
+        -webkit-text-fill-color: var(--primary-bg);
   }
 }
